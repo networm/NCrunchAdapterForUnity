@@ -41,6 +41,7 @@ Change reference from Unity customed NUnit dll to NUnit official dll in csharp p
 
 ## Environment
 
+- NCrunch 3.11.0.9
 - Unity 2017.1.1f1
 - Visual Studio Community 2017 15.3.5
 
