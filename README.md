@@ -56,6 +56,8 @@ Job done! You will notice that NCrunch works normally.
 
 Note: `External Script Editor` should be `Visual Studio` to make Unity generate project compatible with Visual Studio.
 
+Note: Use this adapter wouldn't break `Test Runner` in Unity. You could still use `Test Runner` run Unity related tests at the same time. Reference in project only affects behaviour in Visual Studio.
+
 ## Inside
 
 1. `Open C# Project` then Unity will regenerate project if detect changes, then Visual Studio is opened after that `OnGeneratedCSProjectFiles()` is called. So if we change project in this callback, Visual Studio will prompt solution has changed and do you want to reload it everytime you `Open C# Project`. It's not good.
