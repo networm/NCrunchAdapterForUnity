@@ -49,7 +49,7 @@ These are release versions and update-to-date until 2017/10/04.
 
 ## Usage
 
-1. Copy all files into `Editor` or `Plugins/Editor` directory.
+1. Clone repository into `Assets/Plugins/Editor` directory.
 2. Click menu `Assets` > `Open C# Project` to open Visual Studio.
 
 Job done! You will notice that NCrunch works normally.
