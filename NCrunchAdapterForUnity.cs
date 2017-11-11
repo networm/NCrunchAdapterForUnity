@@ -1,11 +1,12 @@
-﻿using SyntaxTree.VisualStudio.Unity.Bridge;
+﻿using System.Text.RegularExpressions;
+using SyntaxTree.VisualStudio.Unity.Bridge;
 using UnityEditor;
 
 [InitializeOnLoad]
 public class NCrunchAdapterForUnity
 {
     public const string NUnitUnityReference = @"<Reference Include=""nunit.framework"">
-      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
+      <HintPath>.*nunit.framework.dll</HintPath>
     </Reference>";
 
     public const string NUnitOfficialReference = @"<Reference Include=""nunit.framework"">
@@ -16,7 +17,8 @@ public class NCrunchAdapterForUnity
     {
         ProjectFilesGenerator.ProjectFileGeneration += (string name, string content) =>
         {
-            return content.Replace(NUnitUnityReference, NUnitOfficialReference);
+            var regex = new Regex(NUnitUnityReference);
+            return regex.Replace(content, NUnitOfficialReference);
         };
     }
 }
